@@ -3,20 +3,6 @@
         <div class="container">
             <h1>Shopping Cart</h1>
             <section>
-                <!--ul class="list-group">
-                    <li v-if="!isMobile()" class="list-group-item py-3 bg-light">
-                        <div class="row g-3">
-                            <div class="col-4 col-md-3 col-lg-2">
-                                <h5>Image</h5>
-                            </div>
-                            <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
-                                <h5>Product Description</h5>
-                            </div>
-                            <div class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
-                                <h5>Prices</h5>
-                            </div>
-                        </div>
-                    </li-->    
                     <CartItem v-for="product in cart" :product="product" :key="product.id" />
                 <!--/ul-->
             </section>

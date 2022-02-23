@@ -1,29 +1,10 @@
 <template>
     <footer>
-        Copyright © 2022 - Marcus - Case Dev Front-End - EULABS
-        <!--a class="socialLink" v-for="(socialLink, index) in socialLinks" :key="index" :href="socialLink.link">
-            <img :alt="socialLink.label" :title="socialLink.label" :src="socialLink.icon" />
-        </a-->    
+        &nbsp; Copyright © 2022 - Case Dev Front-End - EULABS
     </footer>    
 </template>
 
 <script>
-/*
-import api from '@/services/api.js';
-
-export default {
-    name: 'Footer',
-    data() {
-        return {
-            socialLinks: []
-        }
-    },
-    mounted() {
-        api.get('/social-links.json').then(Response => {
-            this.socialLinks = Response.data;
-        });
-    }
-}*/
 </script>
 
 <style scoped>
