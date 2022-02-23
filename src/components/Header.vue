@@ -40,7 +40,7 @@
                                 <h4 class="product-title">
                                     <b>{{item.title}}</b>
                                 </h4>
-                                <span class="text-dark">Price: $ {{item.price}}</span>
+                                <span class="text-dark">Price: $ {{formatPrice(item.price)}}</span>
                             </div>
                             <!--div class="col-2">
                                     <button v-on:click="removeItem()" class="btn btn-outline-dark border-dark btn-sm" type="button">
@@ -51,7 +51,7 @@
                     </li>
                 </ul>
                 <h4 class="text-dark mb-3">
-                    Total price: $ {{totalPrice}}
+                    Total price: $ {{formatPrice(totalPrice)}}
                 </h4>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">                            
                     <router-link v-on:click="displayCart" to="/" class="btn btn-warning btn-xs btn-block" >Continue Shop</router-link>
@@ -105,7 +105,12 @@ export default {
     methods: {
         displayCart(){
             this.cartActive = !this.cartActive; 
+        },        
+        formatPrice(value) {
+            let val = (value/1).toFixed(2).replace(',', '.')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         }
+
     }
 }
 </script>

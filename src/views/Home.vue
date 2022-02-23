@@ -1,7 +1,6 @@
 <template>
   <div class="home container">
         <section class="container"> 
-            <h1>PRODUCTS</h1>
             <div class="row">
                 <div class="col-sm-6">
                   <form action="">

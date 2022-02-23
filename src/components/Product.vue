@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{product.title}}</h5>
                 <p class="card-text">
-                    <b class="price">${{product.price}}</b>
+                    <b class="price">${{formatPrice(product.price)}}</b>
                     <br/>
                     <small>
                     {{product.shortdesc}}
@@ -49,8 +49,8 @@
                     </button>
                 </div>
                 <div class="text-end mt-2">
-                    <small class="text-secondary">Unit Value: R{{product.price}}</small><br>
-                    <span class="text-dark">Total Price: ${{itemTotalPrice}}</span>
+                    <small class="text-secondary">Unit Value: R{{formatPrice(product.price)}}</small><br>
+                    <span class="text-dark">Total Price: ${{formatPrice(itemTotalPrice)}}</span>
                 </div>
             </div>
         </div>
@@ -139,7 +139,13 @@ export default {
         getRoutePath() {
           return this.$route.path;
         }
-  }
+     },
+     methods: {
+        formatPrice(value) {
+            let val = (value/1).toFixed(2).replace(',', '.')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        }
+     }
 }
 </script>
 
@@ -189,6 +195,6 @@ export default {
     font-weight: 700;
 }
 .price {
-    font-size: 20px;
+    font-size: 18px;
 };
 </style>
